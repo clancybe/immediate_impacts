@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddDistribution">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/input_distDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner_dist_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/months_array"
+                android:spinnerMode="dropdown"
+                app:layout_constraintTop_toBottomOf="@id/parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <Spinner
+                android:id="@+id/spinner_dist_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/days_array"
+                android:spinnerMode="dropdown"
+                app:layout_constraintTop_toBottomOf="@id/parent"
+                app:layout_constraintStart_toEndOf="@id/spinner_dist_month"/>
+
+            <Spinner
+                android:id="@+id/spinner_dist_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/years_array"
+                android:spinnerMode="dropdown"
+                app:layout_constraintStart_toEndOf="@id/spinner_dist_day"
+                app:layout_constraintTop_toBottomOf="@id/parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/input_distTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner_dist_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/hours_array"
+                android:spinnerMode="dropdown"
+                app:layout_constraintTop_toBottomOf="@id/parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <Spinner
+                android:id="@+id/spinner_dist_minute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/minutes_array"
+                android:spinnerMode="dropdown"
+                app:layout_constraintTop_toBottomOf="@id/parent"
+                app:layout_constraintStart_toEndOf="@id/spinner_dist_hour"/>
+
+            <Spinner
+                android:id="@+id/spinner_dist_ampm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/ampm_array"
+                android:spinnerMode="dropdown"
+                app:layout_constraintTop_toBottomOf="@id/parent"
+                app:layout_constraintStart_toEndOf="@id/spinner_dist_minute"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/input_distDonee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Donee"
+            android:inputType="none"
+            app:layout_constraintTop_toBottomOf="@id/input_distTime"/>
+
+        <EditText
+            android:id="@+id/input_distStreet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Street"
+            android:inputType="none"
+            app:layout_constraintTop_toBottomOf="@id/input_distDonee"/>
+
+        <EditText
+            android:id="@+id/input_distCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="City"
+            android:inputType="none"
+            app:layout_constraintTop_toBottomOf="@id/input_distStreet"/>
+
+        <EditText
+            android:id="@+id/input_distState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="State"
+            android:inputType="none"
+            app:layout_constraintTop_toBottomOf="@id/input_distCity"/>
+
+        <EditText
+            android:id="@+id/input_distItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Item Name"
+            android:inputType="none"
+            app:layout_constraintTop_toBottomOf="@id/input_distState"/>
+
+        <EditText
+            android:id="@+id/input_distQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Quantity"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/input_distItemName"/>
+
+        <EditText
+            android:id="@+id/input_distDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            app:layout_constraintTop_toBottomOf="@id/input_distQuantity"/>
+
+        <Button
+            android:id="@+id/submit_distribution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Distribution"
+            app:layout_constraintTop_toBottomOf="@id/input_distDescription"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

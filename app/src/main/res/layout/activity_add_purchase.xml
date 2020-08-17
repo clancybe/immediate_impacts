@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPurchase">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/input_spinners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/months_array"
+                android:spinnerMode="dropdown"
+                app:layout_constraintTop_toBottomOf="@id/parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <Spinner
+                android:id="@+id/spinner_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/days_array"
+                android:spinnerMode="dropdown"
+                app:layout_constraintTop_toBottomOf="@id/parent"
+                app:layout_constraintStart_toEndOf="@id/spinner_month"/>
+
+            <Spinner
+                android:id="@+id/spinner_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/years_array"
+                android:spinnerMode="dropdown"
+                app:layout_constraintStart_toEndOf="@id/spinner_day"
+                app:layout_constraintTop_toBottomOf="@id/parent" />
+        </LinearLayout>
+
+
+        <!--<EditText
+            android:id="@+id/input_purchDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Date"
+            android:inputType="date"
+            app:layout_constraintTop_toBottomOf="@id/spinner_year" />-->
+
+        <RadioGroup
+            android:id="@+id/input_purchType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/input_spinners"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/option_PFD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Purchase For Distribution"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/option_PPF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Printing/Postage Fees"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/option_Reimb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reimbursement"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/option_Other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other Expense"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/input_purchItemPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Item Price"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/input_purchType"/>
+
+        <EditText
+            android:id="@+id/input_purchShipPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Shipping Price"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/input_purchItemPrice"/>
+
+        <EditText
+            android:id="@+id/input_purchTax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Tax"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/input_purchShipPrice"/>
+
+        <EditText
+            android:id="@+id/input_purchItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Item Name"
+            android:inputType="none"
+            app:layout_constraintTop_toBottomOf="@id/input_purchTax"/>
+
+        <EditText
+            android:id="@+id/input_purchQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Quantity"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/input_purchItemName"/>
+
+        <EditText
+            android:id="@+id/input_purchDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            app:layout_constraintTop_toBottomOf="@id/input_purchQuantity"/>
+
+        <EditText
+            android:id="@+id/input_purchSupplier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Supplier"
+            android:inputType="none"
+            app:layout_constraintTop_toBottomOf="@id/input_purchDescription"/>
+
+
+
+        <Button
+            android:id="@+id/submit_purchase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Purchase"
+            app:layout_constraintTop_toBottomOf="@id/input_purchSupplier"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
