@@ -7,8 +7,10 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
+//Distributions API Link: https://sheet.best/api/sheets/0dca7fcd-9a63-437c-accc-fb221731ec5b
 //Purchases API Link: https://sheet.best/api/sheets/902e414a-edb9-4f9d-8942-663db1c081b8
-//Handouts API Link: https://sheet.best/api/sheets/0dca7fcd-9a63-437c-accc-fb221731ec5b
+
+
 
 public interface GSheetsApi {
 

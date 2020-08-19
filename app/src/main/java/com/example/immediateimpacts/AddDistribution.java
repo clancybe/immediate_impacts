@@ -100,23 +100,20 @@ public class AddDistribution extends AppCompatActivity {
         String distMin = String.valueOf(spinner_dist_minute.getSelectedItem());
         String distAmPm = String.valueOf(spinner_dist_ampm.getSelectedItem());
 
-        if (!(distHour.equals("Hour"))) {
-            if((distHour.equals("12")) && (distAmPm.equals("am"))) distHour = "00";
-            if(!(distHour.equals("12")) && (distAmPm.equals("pm"))) distHour = Integer.toString(Integer.parseInt(distHour) + 12);
-        }
-
-        String datePat = "MM-dd-yyyy hh:mm";
+        String datePat = "MM-dd-yyyy hh:mm a";
         DateFormat df = new SimpleDateFormat(datePat);
         String today = df.format(Calendar.getInstance().getTime());
+
         if (distMonth.equals("Month")) distMonth = today.substring(0,2);
-        if (distDay.equals("Day")) distMonth = today.substring(3,5);
+        if (distDay.equals("Day")) distDay = today.substring(3,5);
         if (distYear.equals("Year")) distYear = today.substring(6,10);
         if (distHour.equals("Hour")) distHour = today.substring(11,13);
         if (distMin.equals("Minute")) distMin = today.substring(14,16);
+        if (distAmPm.equals("am/pm")) distAmPm = today.substring(17);
 
         String distId = newId;
         String distDate = distMonth + "-" + distDay + "-" + distYear;
-        String distTime = distHour + ":" + distMin;
+        String distTime = distHour + ":" + distMin + " " + distAmPm;
         String distDonee = ((EditText) findViewById(R.id.input_distDonee)).getText().toString();
         String distStreet = ((EditText) findViewById(R.id.input_distStreet)).getText().toString();
         String distCity = ((EditText) findViewById(R.id.input_distCity)).getText().toString();

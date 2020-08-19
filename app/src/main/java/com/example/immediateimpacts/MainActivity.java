@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
                 openPurchases();
             }
         });
+
+        button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMap();
+            }
+        });
     }
 
     public void openDistributions() {
@@ -43,5 +52,10 @@ public class MainActivity extends AppCompatActivity {
     public void openPurchases() {
         Intent intent = new Intent(this, Purchases.class);
         startActivity(intent);
+    }
+
+    public void openMap() {
+        Toast toast = Toast.makeText(getApplicationContext(), "Mapping function not yet implemented", Toast.LENGTH_SHORT);
+        toast.show();
     }
 }
